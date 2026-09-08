@@ -30,8 +30,8 @@
       border-radius: 10px !important;
       overflow: hidden !important;
     }
-    /* 列表样式：减小默认段间距 */
-    ul { margin: 4px 0; padding-left: 24px; }
+    /* 列表样式：减小默认段间距，所有层级都使用实心圆点 */
+    ul, ul ul, ul ul ul { margin: 4px 0; padding-left: 24px; list-style-type: disc !important; }
     li { margin-bottom: 2px; }
     /* 信息框图片容器：保留圆角和白色背景 */
     .card.infobox-image-card {
@@ -39,8 +39,8 @@
       border-radius: 10px !important;
       overflow: hidden !important;
     }
-    /* 列表样式：减小默认段间距 */
-    ul { margin: 4px 0; padding-left: 24px; }
+    /* 列表样式：减小默认段间距，所有层级都使用实心圆点 */
+    ul, ul ul, ul ul ul { margin: 4px 0; padding-left: 24px; list-style-type: disc !important; }
     li { margin-bottom: 2px; }
     .card.col-12.col-md-3 { width: 28% !important; min-width: 240px !important; max-width: 320px !important; }
     .card.col-12.col-md-3 { width: 28% !important; min-width: 240px !important; max-width: 320px !important; }
@@ -132,7 +132,21 @@
       background-image: url("data:image/svg+xml,%3Csvg%20width='13'%20height='7'%20viewBox='0%200%2013%207'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cpath%20d='M0.5%200%20L12.5%200%20L6.5%207%20Z'%20fill='%23ffffff'/%3E%3Cpath%20d='M0.5%200%20L6.5%207'%20stroke='%23A2A9B1'%20stroke-width='1'%20fill='none'/%3E%3Cpath%20d='M12.5%200%20L6.5%207'%20stroke='%23A2A9B1'%20stroke-width='1'%20fill='none'/%3E%3C/svg%3E");
       background-position: center top;
     }
-  </style>
+  
+  /* 画廊手机端适配：横向滚动展示完整表格，图片不被裁剪 */
+  @media (max-width: 1200px) {
+    .gallery-subcategory {
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+    }
+    .gallery-grid {
+      width: max-content !important;
+      margin: 0 auto !important;
+    }
+  }
+</style>
 </head>
 <body>
 
@@ -168,19 +182,19 @@
           <tbody>
             <tr>
               <td class="text-right font-weight-bold py-1 col-4" scope="row" style="background-color:#b5c9b5; width:33.2%; border-right:1px solid #5b8f5b; border-top:none!important; white-space:nowrap; font-size:15px;border-radius:10px 0 0 0;border-bottom:1px solid #5b8f5b;">性别</td>
-              <td class="bg-white py-1 px-1" style="width:66.8%; border-top:none!important;border-radius:0 10px 0 0;border-bottom:1px solid #5b8f5b;"><span style="font-size: 14px;">女</span></td>
+              <td class="bg-white py-1 px-1" style="width:66.8%; border-top:none!important;border-radius:0 10px 0 0;border-bottom:1px solid #5b8f5b;"><div><span><span style="font-size: 15px;">女</span></span></div></td>
             </tr>
             <tr>
               <td class="text-right font-weight-bold py-1 col-4" scope="row" style="background-color:#b5c9b5; width:33.2%; border-right:1px solid #5b8f5b; border-top:none!important; white-space:nowrap; font-size:15px;border-bottom:1px solid #5b8f5b;">年龄</td>
-              <td class="bg-white py-1 px-1" style="width:66.8%; border-top:none!important;border-bottom:1px solid #5b8f5b;"><span style="font-size: 14px;">20</span></td>
+              <td class="bg-white py-1 px-1" style="width:66.8%; border-top:none!important;border-bottom:1px solid #5b8f5b;"><span><span style="font-size: 15px;">20</span></span></td>
             </tr>
             <tr>
               <td class="text-right font-weight-bold py-1 col-4" scope="row" style="background-color:#b5c9b5; width:33.2%; border-right:1px solid #5b8f5b; border-top:none!important; white-space:nowrap; font-size:15px;border-bottom:1px solid #5b8f5b;">训练家类型</td>
-              <td class="bg-white py-1 px-1" style="width:66.8%; border-top:none!important;border-bottom:1px solid #5b8f5b;"><span style="font-size: 14px;"><a href="https://wiki.52poke.com/wiki/%E5%9B%BD%E9%99%85%E8%AD%A6%E5%AF%9F" style="color: rgb(51, 102, 204);">国际警察</a></span></td>
+              <td class="bg-white py-1 px-1" style="width:66.8%; border-top:none!important;border-bottom:1px solid #5b8f5b;"><a href="https://wiki.52poke.com/wiki/%E5%9B%BD%E9%99%85%E8%AD%A6%E5%AF%9F" style="color: rgb(51, 102, 204);"><span style="font-size: 15px;">国际警察</span></a></td>
             </tr>
             <tr>
               <td class="text-right font-weight-bold py-1 col-4" scope="row" style="background-color:#b5c9b5; width:33.2%; border-right:1px solid #5b8f5b; border-top:none!important; white-space:nowrap; font-size:15px;border-bottom:1px solid #5b8f5b;">出场世代</td>
-              <td class="bg-white py-1 px-1" style="width:66.8%; border-top:none!important;border-bottom:1px solid #5b8f5b;"><span style="font-size: 14px;"><a href="https://wiki.52poke.com/wiki/%E7%AC%AC%E5%9B%9B%E4%B8%96%E4%BB%A3" style="color: rgb(51, 102, 204);">第四世代</a><font color="#000000" style="">、</font><a href="https://wiki.52poke.com/wiki/%E7%AC%AC%E4%B8%83%E4%B8%96%E4%BB%A3" style="color: rgb(51, 102, 204);">第七世代</a><font color="#000000" style="">、<a href="https://wiki.52poke.com/wiki/%E7%AC%AC%E5%85%AB%E4%B8%96%E4%BB%A3" style="color: rgb(51, 102, 204);">第八世代、</a></font><a href="https://wiki.52poke.com/wiki/%E7%AC%AC%E4%B9%9D%E4%B8%96%E4%BB%A3" style="color: rgb(51, 102, 204);">第九世代</a></span></td>
+              <td class="bg-white py-1 px-1" style="width:66.8%; border-top:none!important;border-bottom:1px solid #5b8f5b;"><span style="font-size: 15px;"><a href="https://wiki.52poke.com/wiki/%E7%AC%AC%E5%9B%9B%E4%B8%96%E4%BB%A3" style="color: rgb(51, 102, 204);">第四世代</a><font color="#000000" style="">、</font><a href="https://wiki.52poke.com/wiki/%E7%AC%AC%E4%B8%83%E4%B8%96%E4%BB%A3" style="color: rgb(51, 102, 204);">第七世代</a><font color="#000000" style="">、<a href="https://wiki.52poke.com/wiki/%E7%AC%AC%E5%85%AB%E4%B8%96%E4%BB%A3" style="color: rgb(51, 102, 204);">第八世代、</a></font><a href="https://wiki.52poke.com/wiki/%E7%AC%AC%E4%B9%9D%E4%B8%96%E4%BB%A3" style="color: rgb(51, 102, 204);">第九世代</a></span></td>
             </tr>
             <tr>
               <td class="text-right font-weight-bold py-1 col-4" scope="row" style="background-color:#b5c9b5; width:33.2%; border-right:1px solid #5b8f5b; border-top:none!important; white-space:nowrap; font-size:15px;border-bottom:1px solid #5b8f5b;">出场游戏</td>
@@ -188,7 +202,7 @@
             </tr>
             <tr>
               <td class="text-right font-weight-bold py-1 col-4" scope="row" style="background-color:#b5c9b5; width:33.2%; border-right:1px solid #5b8f5b; border-top:none!important; white-space:nowrap; font-size:15px;border-radius:0 0 0 10px;">动画衍生角色</td>
-              <td class="bg-white py-1 px-1" style="width:66.8%; border-top:none!important;border-radius:0 0 10px 0;"><span style="font-size: 14px;"><font color="#3366cc">静</font></span></td>
+              <td class="bg-white py-1 px-1" style="width:66.8%; border-top:none!important;border-radius:0 0 10px 0;"><span style="font-size: 15px;"><font color="#3366cc">静</font></span></td>
             </tr>
           </tbody>
         </table>
@@ -199,7 +213,7 @@
       <div class="card" style="display:inline-block;min-width:200px;margin:10px 15px;max-width:300px;">
         <div class="card-header" style="background:#f8f9fa;font-weight:bold;font-size:14px;padding:8px 12px;">目录 <a data-toggle="collapse" href="#toc-body" id="toc-btn" style="float:right;cursor:pointer;color:#3366cc;font-weight:normal;font-size:12px;text-decoration:none;">[显示]</a></div>
         <div id="toc-body" class="collapse card-body" style="padding:10px 12px;font-size:13px;">
-          <div style="margin:4px 0;"><a href="#title1" style="color:#3366cc;text-decoration:none;">1. 经历</a></div><div style="margin:4px 0;"><a href="#title2" style="color:#3366cc;text-decoration:none;">2. 配音表</a></div><div style="margin:4px 0;"><a href="#title-pkm" style="color:#3366cc;text-decoration:none;">3. 宝可梦</a></div><div style="margin:4px 0;"><a href="#title-detail" style="color:#3366cc;text-decoration:none;">4. 细节</a></div><div style="margin:4px 0;"><a href="#title-nameorigin" style="color:#3366cc;text-decoration:none;">5. 名字</a></div>
+          <div style="margin:4px 0;"><a href="#title1" style="color:#3366cc;text-decoration:none;">1. 经历</a></div><div style="margin:4px 0;"><a href="#title2" style="color:#3366cc;text-decoration:none;">2. 配音表</a></div><div style="margin:4px 0;"><a href="#title-pkm" style="color:#3366cc;text-decoration:none;">3. 宝可梦</a></div><div style="margin:4px 0;"><a href="#title-gallery-0" style="color:#3366cc;text-decoration:none;">4. 画廊</a></div><div style="margin:4px 0;"><a href="#title-detail" style="color:#3366cc;text-decoration:none;">5. 细节</a></div><div style="margin:4px 0;"><a href="#title-nameorigin" style="color:#3366cc;text-decoration:none;">6. 名字</a></div>
         </div>
       </div>
       <!-- 按照 moduleOrder 动态排序的模块 -->
@@ -715,10 +729,11 @@
       </div>
     </div>
   </div>
+      <h3 id="title-gallery-0" style="font-size:20px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:24px;font-weight:bold;overflow:hidden;">人物绘图</h3><h4 id="subtitle-gallery-0-0" style="font-size:15px;font-weight:bold;margin-top:16px;margin-bottom:8px;">《宝可梦》系列</h4><div class="gallery-subcategory" style="background:#5b8f5b;border:1px solid #205020;border-radius:12px;padding:1px;margin:0 auto 12px auto;width:fit-content;max-width:70%;"><div class="gallery-grid" style="display:grid;grid-template-columns:repeat(3, 200px);gap:4px;"><div class="gallery-grid-item" style="grid-column:span 1;grid-row:span 2;display:flex;flex-direction:column;box-sizing:border-box;height:100%;"><div style="flex:1;position:relative;overflow:hidden;min-height:184px;background:#b5c9b5;border:1px solid #205020!important;border-radius:10px;"><img src="https://f2.toyhou.se/file/f2-toyhou-se/images/115111285_1X7Gv2R5h95NIOY.png" style="position:absolute;top:50%;left:50%;height:184px;width:auto;max-width:none;transform:translate(calc(-50% + 4px), calc(-50% + 0px)) scale(2.16);transform-origin:center center;"></div><div style="text-align:center;padding:4px 2px;font-size:11.2px;color:#000;">图片说明1</div></div><div class="gallery-grid-item" style="grid-column:span 2;grid-row:span 1;display:flex;flex-direction:column;box-sizing:border-box;height:100%;"><div style="flex:1;position:relative;overflow:hidden;min-height:184px;background:#b5c9b5;border:1px solid #205020!important;border-radius:10px;"><img src="https://f2.toyhou.se/file/f2-toyhou-se/images/127379395_OEbnpOO15Z9HdbU.webp" style="position:absolute;top:50%;left:50%;height:184px;width:auto;max-width:none;transform:translate(calc(-50% + 3px), calc(-50% + -2px)) scale(1.34);transform-origin:center center;"></div><div style="text-align:center;padding:4px 2px;font-size:11.2px;color:#000;">图片说明2</div></div><div class="gallery-grid-item" style="grid-column:span 1;grid-row:span 1;display:flex;flex-direction:column;box-sizing:border-box;height:100%;"><div style="flex:1;position:relative;overflow:hidden;min-height:184px;background:#b5c9b5;border:1px solid #205020!important;border-radius:10px;"><img src="https://f2.toyhou.se/file/f2-toyhou-se/images/127379199_O2PapbsujrBUX5I.png" style="position:absolute;top:50%;left:50%;height:184px;width:auto;max-width:none;transform:translate(calc(-50% + 0px), calc(-50% + 0px)) scale(1.34);transform-origin:center center;"></div><div style="text-align:center;padding:4px 2px;font-size:11.2px;color:#000;">图片说明4</div></div><div class="gallery-grid-item" style="grid-column:span 1;grid-row:span 1;display:flex;flex-direction:column;box-sizing:border-box;height:100%;"><div style="flex:1;position:relative;overflow:hidden;min-height:184px;background:#b5c9b5;border:1px solid #205020!important;border-radius:10px;"><img src="https://f2.toyhou.se/file/f2-toyhou-se/images/127379199_O2PapbsujrBUX5I.png" style="position:absolute;top:50%;left:50%;height:184px;width:auto;max-width:none;transform:translate(calc(-50% + 0px), calc(-50% + 0px)) scale(1.34);transform-origin:center center;"></div><div style="text-align:center;padding:4px 2px;font-size:11.2px;color:#000;">说明文字</div></div></div></div>
       <div id="title-detail" class="my-3">
     <h2 style="font-size:20px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:24px;font-weight:bold;overflow:hidden;">细节</h2>
     <div style="overflow:hidden;">
-      <div style="font-size:15px;line-height:1.6;margin-top:10px;">静的非官方常用译名为<b>静香</b>，<b>静华</b><div style="line-height: 1.8; margin-top: 4px; margin-bottom: 4px; padding-top: 4px; padding-bottom: 4px;">目前为止，静似乎仅会在扩展作品里出现。</div><div style="line-height: 1.8; margin-top: 4px; margin-bottom: 4px; padding-top: 4px; padding-bottom: 4px;">在游戏中出现过的国际警察中，静的人物设计似乎更倾向于揶揄基层刑警窘迫的经济状况：</div><div style="line-height: 1.8; margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px;"><ul><li style="margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px;">在帷幕百货的B1F，能看到她在等待百货商店下班，并打算购买将要被丢掉的树果和土特产。</li><li style="margin-top: 4px; margin-bottom: 4px; padding-top: 4px; padding-bottom: 4px;"><span>在湖畔大饭店弄丢钥匙时，可以通过反复对话听到静在担心需要赔给饭店押金。</span></li></ul>虽然游戏中并没有提及静的家乡，但可以通过静的出现地点和当地居民的对话判断，她的家可能在大湿地附近。</div><div style="line-height: 2;"></div></div>
+      <div style="font-size:15px;line-height:1.6;margin-top:10px;">静的非官方常用译名为<b>静香</b>，<b>静华</b><div style="line-height: 1.8; margin-top: 4px; margin-bottom: 4px; padding-top: 4px; padding-bottom: 4px;">目前为止，静似乎仅会在扩展作品里出现。</div><div style="line-height: 1.8; margin-top: 4px; margin-bottom: 4px; padding-top: 4px; padding-bottom: 4px;">在游戏中出现过的国际警察中，静的人物设计似乎更倾向于揶揄基层刑警窘迫的经济状况：</div><div style="line-height: 1.8; margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px;"><ul><li style="margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px;">在帷幕百货的B1F，能看到她在等待百货商店下班，并打算购买将要被丢掉的树果和土特产。</li><li style="margin-top: 4px; margin-bottom: 4px; padding-top: 4px; padding-bottom: 4px;"><span>在湖畔大饭店寻找丢失的钥匙时，可以通过反复对话听到她在担心需要赔给饭店押金。</span></li></ul>虽然游戏中并没有提及静的家乡，但可以通过静的出现地点和当地居民的对话判断，她的家可能在大湿地附近。</div><div style="line-height: 2;"></div></div>
     </div>
   </div>
       <div id="title-nameorigin" class="my-3">
